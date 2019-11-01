@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: gray;
+                height: 100vh;
+            }
+            a{
+                text-decoration: none;
+                color:white;
+            }
+            header{
+                width: 100%;
+                height : 10%;
+                background-color: black;
+                color : white;
+            }
+            nav{
+                width:90%;
+                display: flex;
+                margin: 0 auto;
+                height: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .profile{
+                flex-direction: row;
+            }
+            .row{
+                width:80%;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                margin: 0 auto;
+            }
+            .menu{
+                flex : 1;
+                background-color : white;
+                height: 100%;
+            }
+            .list{
+                flex : 3;
+                padding: 5%;
+            }
+            .list-email{
+                list-style: none;
+            }
+            .list-email__item{
+                display: border-box;
+                width: 100%;
+                background-color: white;
+                margin: 2% 0 ;
+                padding: 2% 0;
+            }
+            .list-email__item > a{
+                color : black;
+            }
+            .a-text{
+                cursor: pointer;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/landing">Gmail Reader</a>
+                <% if(!user){ %>
+                    <a href="/auth/google">Log In</a>
+                <% }else{ %>
+                    <p>Log in as <%=user%></p>
+                    <a href="/auth/logout">Log Out</a>
+                <% }%>
+            </nav>
+        </header>

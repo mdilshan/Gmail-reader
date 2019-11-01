@@ -1,0 +1,18 @@
+<% include ../../partials/header.ejs %>
+        <div class="row">
+            <!-- <div class="menu">
+
+            </div> -->
+            <div class="list">
+                    <% if(token !== null){ %>
+                        <a href=<%= "/mails?page_token="+token %>>Next</a>
+                    <% } %>
+                <ul class='list-email'>
+                    <% msg_ids.forEach(function(msg) { %>
+                        <li class='list-email__item'><a href=<%= "/mails/"+msg.id %>><div class='a-text'><%= msg.id %></div></a></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
